@@ -30,7 +30,7 @@
 ### pre-order traversal: visit root node -> left subtree -> right subtree
 ### post-order traversal: visit left subtree -> right subtree -> root
 
-## Breadth First Search
+## Breadth First Search: visits level by level  O(V+E), V for vertices & E for edges
 
 
 class BinarySearchTree:

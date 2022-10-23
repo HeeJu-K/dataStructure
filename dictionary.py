@@ -1,9 +1,9 @@
 # ----- dictionaries -----
 
-#lists have index, dictionary have keys 
+# lists have index, dictionary have keys 
+# is a python specific hash map
 
-#declared with empty {}
-from cgi import test
+# declared with empty {} (array is [])
 
 
 testDictionary = {}
