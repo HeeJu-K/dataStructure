@@ -5,34 +5,32 @@ class Solution:
 
         num_rows, num_cols = len(board), len(board[0])
         # ### using a set as storing a coordinate (r, c), and need to delete it
-        # visited = set()
-        visited = []
+        visited = set()
+        # visited = []
 
         def dfs(row, col, index): 
-            print(row, col, index)
             #when reached to the end of the word, word is found
             if index == len(word):
                 return True
             #invalid cases
             if (row >= num_rows or col >= num_cols or
                 row < 0 or col < 0 or
-                [row, col] in visited or
+                # [row, col] in visited or                
+                (row, col) in visited or
                 board[row][col] != word[index]): 
-                if [row, col] in visited:
-                    print("in visted", row, col, visited)
+                
                 return False
             
             #valid, found the next alphabet
-            visited.append([row, col])
+            # visited.append([row, col])
+            visited.add((row, col))
             res = ( dfs(row+1, col, index+1) or 
                     dfs(row-1, col, index+1) or
                     dfs(row, col-1, index+1) or
                     dfs(row, col+1, index+1))
             #at this point, either dfs returned True or False. when it is False, delete visited paths to start over
-            print("before remove", visited, res)
-            if res != True:
-                visited.remove([row, col])
-            print("after remove", visited)
+            # visited.remove([row, col])
+            visited.remove((row, col))
             return res
 
         for r in range (num_rows):
