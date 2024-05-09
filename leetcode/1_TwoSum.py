@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
@@ -11,3 +13,7 @@ class Solution:
             if findNum in numsMap.keys():
                 return [i, numsMap[findNum]]
             numsMap[nums[i]] = i
+
+
+solution = Solution()
+solution.twoSum([1, 3, 5], 3)
